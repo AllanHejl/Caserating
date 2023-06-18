@@ -6,28 +6,35 @@ import { customElement, property } from 'lit/decorators.js';
 export class CaseRating extends LitElement {
   @property({ type: Number }) rating = 0;
 
-  static styles = css`
-    :host {
-      display: inline-block;
-      font-size: 18px;
-    }
+  static styles = [
+    css`
+      :host {
+        display: inline-block;
+      }
 
-    .rating {
-      display: inline-flex;
-      align-items: center;      
-    }
+      .rating {
+        display: inline-flex;
+        align-items: center;
+      }
 
-    .star {
-      width: 20px;
-      height: 20px;      
-      fill: gold;
-    }
+      .star {
+        width: var(--star-size, 18px);
+        height: var(--star-size, 18px);
+        fill: var(--star-fill-color, gold);
+      }
 
-    .star:not(.filled) {
-      fill: lightgray;
-    }   
-
-  `;
+      .star:not(.filled) {
+        fill: var(--star-outline-color, lightgray);
+      }
+    `,
+    css`
+      :host {
+        --star-size: 18px;
+        --star-fill-color: gold;
+        --star-outline-color: lightgray;
+      }
+    `,
+  ];
 
   render() {
     return html`
