@@ -15,6 +15,7 @@ export class CaseRating extends LitElement {
       :host([disabled]) .star {
         pointer-events: none;
         opacity: 0.6;
+        fill: var(--star-notrated-color, lightgray);
       }
 
       .rating {
@@ -44,7 +45,7 @@ export class CaseRating extends LitElement {
       }
 
       .star:not(.rated) {
-        fill: var(--star-outline-color, lightgray);
+        fill: var(--star-notrated-color, lightgray);
       }
       
       .star:not(.rated):focus {
@@ -59,9 +60,21 @@ export class CaseRating extends LitElement {
       :host {
         --star-size: 18px;
         --star-fill-color: gold;
-        --star-outline-color: lightgray;
+        --star-notrated-color: lightgray;
         --star-hover-fill-color: orange;
         --star-focus-fill-color: orange;
+      }
+
+      :host([size="large"]) .star {
+        --star-size: 18px;
+      }
+
+      :host([size="medium"]) .star {
+        --star-size: 14px;
+      }
+
+      :host([size="small"]) .star {
+        --star-size: 10px;
       }
     `,
   ];
