@@ -29,8 +29,8 @@ export class CaseRating extends LitElement {
       }
       
       .star {
-        width: var(--star-size, 18px);
-        height: var(--star-size, 18px);
+        width: var(--star-size, 14px);
+        height: var(--star-size, 14px);
         fill: var(--star-fill-color, gold);
         transition: fill 0.2s;
         cursor: pointer;
@@ -59,7 +59,7 @@ export class CaseRating extends LitElement {
     `,
     css`
       :host {
-        --star-size: 18px;
+        --star-size: 14px;
         --star-fill-color: gold;
         --star-notrated-color: lightgray;
         --star-hover-fill-color: orange;
